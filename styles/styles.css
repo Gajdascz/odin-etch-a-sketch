@@ -39,7 +39,8 @@ body {
 .grid-container {
   display: flex;
   flex-direction: column;
-  border: 5px solid red;
+  border: 10px solid lightblue;
+  border-radius: 5px;
   width: 500px;
   height: 500px;
 }
@@ -48,7 +49,7 @@ body {
   flex: 1;
 }
 .grid-square {
-  border: 1px solid purple;
+  border: 1px solid lightgray;
   flex: 1;
 }
 
