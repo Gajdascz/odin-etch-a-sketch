@@ -50,7 +50,9 @@ function getRandomColor(passes, lightness) {
   const changeDimensionsButton = document.querySelector(`.change-dimensions-button`);
   changeDimensionsButton.addEventListener(`click`, () => {
     let newDimensions = prompt(`Enter a number less than 100 to change the grid dimensions.`);
+    if(newDimensions <= 100){
     changeGridDimensions(newDimensions);
+    } else { alert(`Please enter a value less than 100.`); }
   });
 })();
 
