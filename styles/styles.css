@@ -54,5 +54,5 @@ body {
 }
 
 .colored-grid-square {
-  background-color: black;
+  background-color: hsl(120, 100%, 0%);
 }

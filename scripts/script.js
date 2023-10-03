@@ -24,10 +24,26 @@ function changeGridDimensions(newDimensions){
 function applyGridSquareListeners() {
   const gridSquare = document.querySelectorAll(`.grid-square`);
   gridSquare.forEach((gridSquare) => {
+    let passes = 0;
+    let lightness = 90;
     gridSquare.addEventListener(`mouseover`, () => {
-      gridSquare.classList.add(`colored-grid-square`);
+      let randomColor = getRandomColor(passes, lightness);
+      passes++;
+      console.log(randomColor);
+      console.log(passes);
+      gridSquare.style.cssText = `background-color: ${randomColor};`;
     });
   });
+}
+
+function getRandomColor(passes, lightness) {
+  let hue = Math.floor(Math.random()*360);
+  let saturation = 100;
+  if(passes >= 0 && passes < 10) {
+    lightness -= (passes*10);
+  } else { lightness = 0; }
+  let randomColor = `hsl(${hue},${saturation}%,${lightness}%)`;
+  return randomColor;
 }
 
 (function () {
